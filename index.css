@@ -17,3 +17,17 @@ body {
   background: #555;
   color: #eee;
 }
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .site {
+    width: 90%;
+  }
+}
