@@ -1,10 +1,9 @@
 
 
 import { promises as fsp } from 'fs';
-import { shotsFolder, outFolder, urlToFname } from './fetch-shots';
+import { shotsFolder, outFolder, urlToFname, readJson, dataFile } from './fetch-shots';
 
 const replacer = 'REPLACETHISPLEASE';
-const dataFile = __dirname + '/sites.json';
 const outFile = __dirname + "/README.md";
 
 const md_format = `
@@ -23,7 +22,7 @@ interface Entry {
 
 async function main() {
   const files = await fsp.readdir(outFolder);
-  const data: Entry[] = JSON.parse(await fsp.readFile(dataFile, 'utf8'));
+  const data: Entry[] = await readJson(dataFile);
   
   console.log(files);
   const lines = [];
