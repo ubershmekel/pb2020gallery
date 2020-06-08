@@ -15,7 +15,7 @@
 
 body {
   background: #555;
-  color: #eee;
+  color: #bbb;
 }
 
 img {
@@ -24,6 +24,7 @@ img {
 
 a {
   text-decoration: none;
+  color: #111;
 }
 
 @media only screen and (max-width: 600px) {

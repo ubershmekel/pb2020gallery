@@ -1,12 +1,16 @@
-const captureWebsite = require('capture-website');
 import { promises as fsp } from 'fs';
 import * as fs from 'fs';
+
 const rmfr = require('rmfr');
+const captureWebsite = require('capture-website');
+import { ncp } from 'ncp';
 
 export const shotsFolder = 'screenshots';
-export const outFolder = __dirname + '/' + shotsFolder;
-const imagesFilter = outFolder + '/*.png'
+export const outBaseFolder = __dirname + '/dist'
+export const outImageFolder = outBaseFolder + '/' + shotsFolder;
+const imagesFilter = outImageFolder + '/*.png';
 export const dataFile = __dirname + '/sites.json';
+export const srcFolder = __dirname + '/src';
 
 
 const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
@@ -44,18 +48,32 @@ function checkFileExists(filepath){
   });
 }
 
+async function copyDir(source: string, destination: string) {
+  return new Promise((resolve, reject) => {
+    ncp(source, destination, function (err: Error) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+}
 
-async function main() {
-  // await captureWebsite.file('https://sindresorhus.com', 'screenshot.png');
+async function setupFolder() {
+  // Delete existing images
+  // await rmfr(imagesFilter, { glob: true });
 
   // Make sure screenshots directory exists
-  if (!await checkFileExists(outFolder)) {
-    await fsp.mkdir(outFolder);
+  if (!await checkFileExists(outImageFolder)) {
+    await fsp.mkdir(outImageFolder, { recursive: true });
   }
 
-  // Delete existing images
-  await rmfr(imagesFilter, { glob: true });
+  return copyDir(srcFolder, outBaseFolder);
+}
 
+async function main() {
+  await setupFolder();
 
   // const text = String(await fsp.readFile('./README.md'));
   const entries = await readJson(dataFile);
@@ -72,19 +90,19 @@ async function main() {
     const url = entry.url;
     console.log(url);
 
-    if (url.indexOf('github.com') >= 0) {
-      console.log("skipping github.com");
-      continue
-    }
+    // if (url.indexOf('github.com') >= 0) {
+    //   console.log("skipping github.com");
+    //   continue
+    // }
     const fname = urlToFname(url);
-    const dest = `${outFolder}/${fname}`;
+    const dest = `${outImageFolder}/${fname}`;
     promises.push(captureWebsite.file(url, dest, {
       width: 800,
       height: 1000,
       scaleFactor: 1,
-      delay: 2,
+      delay: 3, // 3 second delay for the shot because sometimes the red map fails to load
     }));
-    console.log("promised");
+    console.log("promised", dest);
   }
   await Promise.all(promises);
   console.log("done");
