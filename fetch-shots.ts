@@ -75,13 +75,12 @@ async function setupFolder() {
 async function main() {
   await setupFolder();
 
-  // const text = String(await fsp.readFile('./README.md'));
   const entries = await readJson(dataFile);
 
   let promises = [];
-  // for (const line of text.split('\n')) {
+  const maxParallelScreenshots = 6;
   for (const entry of entries) {
-    if (promises.length > 4) {
+    if (promises.length >= maxParallelScreenshots) {
       // limit parallelism
       await Promise.all(promises);
       promises = [];
@@ -100,7 +99,7 @@ async function main() {
       width: 800,
       height: 1000,
       scaleFactor: 1,
-      delay: 3, // 3 second delay for the shot because sometimes the red map fails to load
+      delay: 5, // seconds delay for the shot because sometimes the red map fails to load
     }));
     console.log("promised", dest);
   }
