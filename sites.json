@@ -1,0 +1,46 @@
+[
+  {
+    "url": "http://www.2020protesters.com/",
+    "description": "site to browse events by state with a big video background"
+  },
+  {
+    "url": "https://datastudio.google.com/s/l7lJrq8w7Cc",
+    "description": "dashboard showing brutality pie charts by state and victim"
+  },
+  {
+    "url": "https://policebrutality.netlify.app/",
+    "description": "list of events you can visually see per state, per city, and link to the specific incident"
+  },
+  {
+    "url": "https://onebadapple.org",
+    "description": "Mega list of events"
+  },
+  {
+    "url": "https://bread.codes/PoliceBrutality/",
+    "description": "Timeline of police brutality events"
+  },
+  {
+    "url": "https://too-many-incidents.netlify.app/",
+    "description": "see the incidents as cards, sort by date, and location"
+  },
+  {
+    "url": "https://frontend-1750f.web.app/",
+    "description": "map of incidents with links"
+  },
+  {
+    "url": "https://maminian.github.io/brutality-map",
+    "description": "map of incidents with links"
+  },
+  {
+    "url": "https://2020policebrutality.netlify.app",
+    "description": "click on a state to see the links visually"
+  },
+  {
+    "url": "https://datastudio.google.com/s/oFSSsjw2kAY",
+    "description": "a dashboard with stats on a state and city level"
+  },
+  {
+    "url": "http://api.policebrutality.io/v1/videos",
+    "description": "a REST API that points to backed up video files"
+  }
+]

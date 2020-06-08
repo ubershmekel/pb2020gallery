@@ -1,0 +1,17 @@
+.site {
+  width: 30%;
+  overflow: hidden;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 2px;
+  background: #eee;
+}
+
+.description {
+  padding: 1em 0.3em;
+  font-size: 24px;
+}
+
+body {
+  background: #666;
+}
