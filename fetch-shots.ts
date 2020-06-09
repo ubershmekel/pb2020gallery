@@ -78,6 +78,8 @@ async function main() {
   const entries = await readJson(dataFile);
 
   let promises = [];
+  // maxParallelScreenshots set to something less than the default node
+  // listener limit (15?)
   const maxParallelScreenshots = 6;
   for (const entry of entries) {
     if (promises.length >= maxParallelScreenshots) {
