@@ -97,12 +97,17 @@ async function main() {
     // }
     const fname = urlToFname(url);
     const dest = `${outImageFolder}/${fname}`;
-    promises.push(captureWebsite.file(url, dest, {
+    const fetchPromise = captureWebsite.file(url, dest, {
       width: 800,
       height: 1000,
       scaleFactor: 1,
       delay: 5, // seconds delay for the shot because sometimes the red map fails to load
-    }));
+      timeout: 30, // default of 60 is way too long.
+    });
+    fetchPromise.catch((err) => {
+      console.error(`Failed on: ${url}`);
+    })
+    promises.push(fetchPromise);
     console.log("promised", dest);
   }
   await Promise.all(promises);
