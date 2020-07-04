@@ -1,0 +1,66 @@
+[
+  {
+    "url": "https://filepolicereport.com/",
+    "description": "List of incidents by state with links to share"
+  },
+  {
+    "url": "https://to-protect-and-serve.com",
+    "description": "List of incident videos with links to sources"
+  },
+  {
+    "url": "https://www.fightforjustice2020.com/",
+    "description": "Visual timeline and tagged statistics per state"
+  },
+  {
+    "url": "https://brutalitydb.org/",
+    "description": "Search through descriptions of events"
+  },
+  {
+    "url": "https://datastudio.google.com/s/oFSSsjw2kAY",
+    "description": "A dashboard with stats on a state and city level"
+  },
+  {
+    "url": "https://datastudio.google.com/s/l7lJrq8w7Cc",
+    "description": "Dashboard showing brutality pie charts by state and victim"
+  },
+  {
+    "url": "https://policebrutality.netlify.app/",
+    "description": "List of events you can visually see per state, per city, and link to the specific incident"
+  },
+  {
+    "url": "http://www.2020protesters.com/",
+    "description": "Site to browse events by state with a big video background"
+  },
+  {
+    "url": "https://onebadapple.org",
+    "description": "Mega list of events"
+  },
+  {
+    "url": "https://bread.codes/PoliceBrutality/",
+    "description": "Timeline of police brutality events"
+  },
+  {
+    "url": "https://too-many-incidents.netlify.app/",
+    "description": "See the incidents as cards, sort by date, and location"
+  },
+  {
+    "url": "https://frontend-1750f.web.app/",
+    "description": "Map of incidents with links"
+  },
+  {
+    "url": "https://maminian.github.io/brutality-map",
+    "description": "Map of incidents with links"
+  },
+  {
+    "url": "https://2020policebrutality.netlify.app",
+    "description": "Click on a state to see the links visually"
+  },
+  {
+    "url": "http://api.policebrutality.io/v1/videos",
+    "description": "A REST API that points to backed up video files"
+  },
+  {
+    "url": "https://github.com/2020PB/police-brutality/tree/data_build",
+    "description": "The official 2020pb API homepage"
+  }
+]
