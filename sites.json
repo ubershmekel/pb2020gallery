@@ -40,10 +40,6 @@
     "description": "Timeline of police brutality events"
   },
   {
-    "url": "https://too-many-incidents.netlify.app/",
-    "description": "See the incidents as cards, sort by date, and location"
-  },
-  {
     "url": "https://frontend-1750f.web.app/",
     "description": "Map of incidents with links"
   },
