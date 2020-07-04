@@ -105,7 +105,7 @@ async function main() {
       timeout: 30, // default of 60 is way too long.
     });
     fetchPromise.catch((err) => {
-      console.error(`Failed on: ${url}`);
+      console.error(`Failed fetching url: ${url}`);
     })
     promises.push(fetchPromise);
     console.log("promised", dest);
@@ -116,6 +116,22 @@ async function main() {
 
 if (typeof require !== 'undefined' && require.main === module) {
   main()
-    .catch((err) => { console.error("unhandled fail", __filename, err) })
+    .catch((err) => {
+      console.error("unhandled fail", __filename, err);
+      console.error('Closing process');
+      // For some reason, the netlify deploy kept running after an unhandled promise failure.
+      // So I'm using `process.exit` to expedite ending the deploy
+      // 4:39:44 AM: unhandled fail /opt/build/repo/fetch-shots.ts { TimeoutError: Navigation timeout of 60000 ms exceeded
+      // 4:39:44 AM:     at Promise.then (/opt/build/repo/node_modules/puppeteer/lib/LifecycleWatcher.js:100:111)
+      // 4:39:44 AM:   -- ASYNC --
+      // 4:39:44 AM:     at Frame.<anonymous> (/opt/build/repo/node_modules/puppeteer/lib/helper.js:94:19)
+      // 4:39:44 AM:     at Page.goto (/opt/build/repo/node_modules/puppeteer/lib/Page.js:485:53)
+      // 4:39:44 AM:     at Page.<anonymous> (/opt/build/repo/node_modules/puppeteer/lib/helper.js:95:27)
+      // 4:39:44 AM:     at captureWebsite (/opt/build/repo/node_modules/capture-website/index.js:231:51)
+      // 4:39:44 AM:     at process._tickCallback (internal/process/next_tick.js:68:7) name: 'TimeoutError' }
+      // 4:39:44 AM: done with /opt/build/repo/fetch-shots.ts
+      // 5:07:37 AM: Build exceeded maximum allowed runtime        
+      process.exit(2);
+    })
     .then(() => { console.log("done with", __filename); });
 }
