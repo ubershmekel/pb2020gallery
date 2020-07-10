@@ -39,7 +39,7 @@ a:link, a:visited {
 }
 header h1 {
   letter-spacing: 5px;
-  
+
 }
 header .description {
   line-height: 40px;
@@ -51,20 +51,20 @@ header .description {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
+
 }
 .card {
   flex: 400px 1 1;
   margin-top: 5%;
   margin-left:3.5%;
   margin-right:3.5%;
-  
 
- 
 
-  
 
-  
+
+
+
+
 }
 .cardBody {
   background-size: cover;
@@ -75,19 +75,18 @@ header .description {
   min-height: 350px;
   max-height:350px;
   max-width:1000px;
-  
+
 	height: auto;
 	border-radius: 10px;
 	color: #fff;
   font-size: 1.5rem;
   position:relative;
-  opacity:1;
-  transition: all 2s ease-in;
 
- 
+
+
 }
 
-.cardBody:hover::after{
+.cardBody::after{
 	position: absolute;
     top: 0;
     left: 0;
@@ -98,7 +97,7 @@ header .description {
     display: block;
     opacity: .6;
     background-color: #000;
-    
+
     border-radius: 10px;
     transition: all 2s ease-out;
 }
@@ -115,10 +114,9 @@ header .description {
     -webkit-perspective: inherit;
             perspective: inherit;
     z-index: 2;
-    opacity:0;
-    transition: all 2s ease-out;
-  
- 
+
+
+
 }
 .inner:hover{
   color: rgba(255,255,255,0.7);
@@ -133,10 +131,9 @@ header .description {
     -webkit-perspective: inherit;
             perspective: inherit;
     z-index: 2;
-    opacity:1;
-    transition: all 2s ease-out;
-  
- 
+
+
+
 }
  .inner p{
   font-size: 1.5rem;
@@ -144,9 +141,9 @@ header .description {
   position: relative;
   letter-spacing: 2px;
   color:white;
-  
-  
-  
+
+
+
 }
 .inner a:link, inner a:visited {
   text-decoration: none;
