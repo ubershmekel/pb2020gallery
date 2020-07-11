@@ -19,13 +19,17 @@ async function main() {
   for (const entry of data) {
     const imageUrl = shotsFolder + '/' + urlToFname(entry.url);
     lines.push(`
+    <div class="card">
+    <div class="cardBody" style= "background-image:url(${imageUrl})">
+      <div class="inner">
       <a href="${entry.url}" class="site">
-        <div class="description">
-          ${entry.description}
-        </div>
-
-        <img src="${imageUrl}" />
-      </a>
+          <p>
+            ${entry.description}
+          </p>
+        </a>
+      </div>
+    </div>
+    </div>
     `);
   }
   

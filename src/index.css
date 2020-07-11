@@ -1,35 +1,152 @@
-.site {
-  width: 30%;
-  overflow: hidden;
-  display: inline-block;
-  margin: 20px;
-  border-radius: 2px;
-  background: #eee;
-  color: #111;
-  vertical-align: top;
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+
 }
 
-.description {
-  padding: 1em 0.3em;
-  font-size: 24px;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-body {
-  background: #555;
-  color: #eee;
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  margin-left:3.5%;
+  margin-right:3.5%;
+}
+
+ol, ul {
+  list-style: none;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
+header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 2%;
+  min-width: 200px;
 
-a {
+}
+a:link, a:visited {
   text-decoration: none;
-  color: #bbb;
+  color:black;
+
+}
+header h1 {
+  letter-spacing: 5px;
+
+}
+header .description {
+  line-height: 40px;
+  margin-top: 40px;
+  letter-spacing: 2px;
 }
 
-@media only screen and (max-width: 600px) {
-  .site {
-    width: 90%;
-  }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.card {
+  flex: 400px 1 1;
+  margin-top: 5%;
+  margin-left:3.5%;
+  margin-right:3.5%;
+
+
+
+
+
+
+
+}
+.cardBody {
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+  border-radius: 10px;
+	background-position: center;
+	text-align: center;
+  min-height: 350px;
+  max-height:350px;
+  max-width:1000px;
+
+	height: auto;
+	border-radius: 10px;
+	color: #fff;
+  font-size: 1.5rem;
+  position:relative;
+
+
+
+}
+
+.cardBody::after{
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: .6;
+    background-color: #000;
+
+    border-radius: 10px;
+    transition: all 2s ease-out;
+}
+
+.inner{
+  color: rgba(255,255,255,0.7);
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+    z-index: 2;
+
+
+
+}
+.inner:hover{
+  color: rgba(255,255,255,0.7);
+
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+    z-index: 2;
+
+
+
+}
+ .inner p{
+  font-size: 1.5rem;
+  margin-top:25%;
+  position: relative;
+  letter-spacing: 2px;
+  color:white;
+
+
+
+}
+.inner a:link, inner a:visited {
+  text-decoration: none;
+  color:white;
+
 }
