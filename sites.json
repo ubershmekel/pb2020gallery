@@ -56,6 +56,10 @@
     "description": "A REST API that points to backed up video files"
   },
   {
+    "url": "http://defund-the-police.today/",
+    "description": "A visual timeline with embedded sources of police brutality incidents since George Floyd's death"
+  },
+  {
     "url": "https://github.com/2020PB/police-brutality/tree/data_build",
     "description": "The official 2020pb API homepage"
   }
